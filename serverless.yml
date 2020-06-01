@@ -1,0 +1,28 @@
+service: serverless-boilerplate
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: eu-west-2
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+package:
+  individually: true
+
+functions:
+  api:
+    handler: src/api/index.handler
+    events:
+      - http:
+          path: /orders
+          method: get
+
+custom:
+  webpack:
+    packager: yarn
+    includeModules:
+      forceExclude:
+        - aws-sdk

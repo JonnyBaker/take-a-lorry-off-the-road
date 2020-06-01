@@ -1,0 +1,15 @@
+/dist/
+/node_modules/
+/.serverless/
+/.webpack/
+.DS_Store
+*.log
+report.*.json
+/coverage/
+*.code-workspace
+
+# Git secret
+.gitsecret/keys/random_seed
+!*.secret
+.env.dev
+.env.prod
